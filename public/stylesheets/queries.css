@@ -1,0 +1,41 @@
+
+/*this is from big tablet to 1200 px  (width smaller than the 1140px row)*/
+@media only screen and (max-width: 1200px) {
+    .box {
+        width: 25%;
+    }
+}
+
+
+/*target the ipad adn potrait mode which has 768 px*/
+/*small tablet to big tablet; frmo 768px to 1023px*/
+@media only screen and (max-width: 1023px) {
+     .box {
+        width: 30%;
+    }
+}
+
+/*all smaller phones smaller than ipad from 481px to 767px */
+/*small phones to small tablets*/
+@media only screen and (max-width: 767px) {
+    .box {
+        width: 40%;
+    }
+
+    .full-name {
+        font-size: 70%;
+    }
+
+    h1 {
+        font-size: 250%;
+    }
+
+
+}
+
+/*small phones from 0 to 480 px */
+@media only screen and (max-width: 480px) {
+   .box {
+        width: 90%;
+    }
+}

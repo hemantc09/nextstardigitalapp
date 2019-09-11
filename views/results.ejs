@@ -1,0 +1,78 @@
+<% include partials/header %>
+    <section class="section">
+        <div class="row">
+            <div class="container">
+                <%
+                    //recived the apidata in the text to use 
+                    var text = apiData;
+                    // filter the text object whos cool factor is atlest 7
+                    var arrCoolFactorFiltered  = text.filter(function(ele) {
+                        //parse the cool factor to Int. because its string
+                        return parseInt(ele['Cool Factor']) >= 7;
+                    });
+
+                    //compare function to sort by "Total Score"
+                    function compare(a, b) {
+                      const genreA = a["Total Score"];
+                      const genreB = b["Total Score"];
+                      let comparison = 0;
+                      if (genreA > genreB) {
+                        comparison = 1;
+                      } else if (genreA < genreB) {
+                        comparison = -1;
+                      }
+                      return comparison*-1; //for desc order
+                    }
+
+                    // pass function refrence to sort by total score
+                    arrCoolFactorFiltered.sort(compare);
+                    for(var i = 0 ; i < 10 ; i ++) {
+                    console.log("Year : "  + arrCoolFactorFiltered[i]["Year"] + " ,  Total Score : " + arrCoolFactorFiltered[i]["Total Score"]);
+                    }
+                   
+                    //display only 10 results
+                    for(var i =  0 ; i < 10 ; i ++) {
+                         /* Display "Full Name" and "Total Score" for the top 10 vehicles whose "Cool Factor" is  at least 7, ordered by "Total Score". “Full Name” is a string constructed from "Year", "Make" and "Model". (see example image) */
+                        var fullName ;
+                        var totalScore;
+                        // console.log(arrCoolfactor[i]["Cool Factor"]);
+                        var year = arrCoolFactorFiltered[i]["Year"];
+                        var make = arrCoolFactorFiltered[i]["Make"];
+                        var model = arrCoolFactorFiltered[i]["Model"];
+                        fullName = year + " " + make + " " + model;
+
+                        totalScore = arrCoolFactorFiltered[i]["Total Score"];
+
+                        console.log("Full name: " + fullName + ", total score : " + totalScore + " ,cool factor : " + arrCoolFactorFiltered[i]["Cool Factor"]);
+                    %>
+                 
+                
+                    <!-- //print the p for year only -->
+                    <div class="box trigger">    
+                        <p class="full-name"><%=fullName%></p>    
+                        <div class="box-score">
+                            <h1 class=""><%=totalScore%></h1>
+                        </div>    
+                    </div>
+
+                    <!-- modal  -->
+                    <div class="modal">
+                        <div class="modal-content">
+                            <span class="close-button">×</span>
+                                <p class="full-name"><%=fullName%></p>
+                                <h1 class=""><%=totalScore%></h1>
+                            </div>
+                     </div>
+                    <%   
+                    }
+                    //for loop ends
+                    %>
+                    <div class="box filling-empty-space-childs"> </div>
+                    <div class="box filling-empty-space-childs"> </div>
+            <!-- content -->
+            </div>
+            <!-- row -->
+        </div>
+    </section>
+        
+    <% include partials/footer %>
