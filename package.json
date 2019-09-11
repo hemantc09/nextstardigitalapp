@@ -1,5 +1,5 @@
 {
-  "name": "jokeme",
+  "name": "nextstar",
   "version": "1.0.0",
   "description": "NextStar App",
   "main": "app.js",
@@ -15,5 +15,14 @@
     "http": "0.0.0",
     "node-sass": "^4.9.3",
     "request": "^2.88.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hemantc09/nextstardigitalapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hemantc09/nextstardigitalapp/issues"
+  },
+  "homepage": "https://github.com/hemantc09/nextstardigitalapp#readme"
 }
