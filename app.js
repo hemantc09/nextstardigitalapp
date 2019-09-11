@@ -16,7 +16,7 @@ app.use(express.static(__dirname + "/public"));
 console.log(__dirname);
 
 //results route
-app.get("/results",function(req,res){
+app.get("/",function(req,res){
 
     //reqest API
     var url = "https://gist.githubusercontent.com/scottburton11/66a921c458f9500a773a6b0ac65006df/raw/629bfd6a3125e3428bd85a53231bd8018c407a65/Javascript%2520Working%2520With%2520Data%2520Challenge%2520data";
